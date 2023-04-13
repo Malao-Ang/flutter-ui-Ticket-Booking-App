@@ -1,4 +1,6 @@
+import 'package:booking_app/screens/hotel_screen.dart';
 import 'package:booking_app/screens/ticket_view.dart';
+import 'package:booking_app/utils/app_info.dart';
 import 'package:booking_app/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -93,14 +95,45 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: Row(
+                children: ticketList
+                    .map((tick) => TicketView(ticket: tick))
+                    .toList()),
+          ),
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TicketView(),
-                TicketView(),
+                Text(
+                  "Hotels",
+                  style: Styles.headLineStyle2,
+                ),
+                InkWell(
+                  onTap: () {
+                    print("you are trapped");
+                  },
+                  child: Text(
+                    "View all",
+                    style:
+                        Styles.textStyle.copyWith(color: Styles.primaryColor),
+                  ),
+                )
               ],
             ),
-          )
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(left: 20),
+              child: Row(
+                children: hotelList
+                    .map((singleHotel) => HotelScreen(hotel: singleHotel))
+                    .toList(),
+              )),
+          const Gap(10),
         ],
       ),
     );
