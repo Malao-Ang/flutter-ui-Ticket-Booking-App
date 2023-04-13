@@ -1,4 +1,5 @@
 import 'package:booking_app/screens/bottom_bar.dart';
+import 'package:booking_app/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,9 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primaryColor: primary),
       home: const BottomBar(),
     );
   }
