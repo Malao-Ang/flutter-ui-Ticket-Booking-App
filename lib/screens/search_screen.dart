@@ -1,3 +1,4 @@
+import 'package:booking_app/screens/widgets/double_text_widget.dart';
 import 'package:booking_app/screens/widgets/icon_text_widget.dart';
 import 'package:booking_app/utils/app_layout.dart';
 import 'package:booking_app/utils/app_styles.dart';
@@ -77,6 +78,93 @@ class SearchScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Gap(AppLayout.getHight(40)),
+            AppDoubleTextWidget(
+                bigText: "Upcoming Flights", smallText: "View all"),
+            Gap(AppLayout.getHight(15)),
+            Row(
+              children: [
+                Container(
+                  height: AppLayout.getHight(400),
+                  width: size.width * 0.42,
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppLayout.getHight(15),
+                      vertical: AppLayout.getWidth(15)),
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.shade200,
+                            blurRadius: 1,
+                            spreadRadius: 1)
+                      ],
+                      color: Colors.white,
+                      borderRadius:
+                          BorderRadius.circular(AppLayout.getHight(20))),
+                  child: Column(
+                    children: [
+                      Container(
+                          height: AppLayout.getHight(190),
+                          decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.circular(AppLayout.getHight(12)),
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage("assets/images/sit.jpg")))),
+                      Gap(AppLayout.getHight(12)),
+                      Text(
+                        "20% discount on the early booking of this flight, Don't miss.",
+                        style: Styles.headLineStyle2,
+                      )
+                    ],
+                  ),
+                ),
+                Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: AppLayout.getHight(10)),
+                      width: size.width * 0.44,
+                      height: AppLayout.getHight(210),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF3AB8B8),
+                        borderRadius:
+                            BorderRadius.circular(AppLayout.getHight(18)),
+                      ),
+                      padding: EdgeInsets.symmetric(
+                          vertical: AppLayout.getHight(15),
+                          horizontal: AppLayout.getHight(15)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Discount\nfor survay",
+                              style: Styles.headLineStyle2.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
+                          Gap(AppLayout.getHight(10)),
+                          Text(
+                            "Take the survay about our services and get discount",
+                            style: Styles.headLineStyle2.copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(AppLayout.getHight(30)),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          width: 18,
+                          color: Color(0xFF189999),
+                        ),
+                        color: Colors.transparent,
+                      ),
+                    )
+                  ],
+                )
+              ],
+            )
           ]),
     );
   }
