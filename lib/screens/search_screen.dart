@@ -120,45 +120,88 @@ class SearchScreen extends StatelessWidget {
                 ),
                 Column(
                   children: [
+                    Stack(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: AppLayout.getHight(10)),
+                          width: size.width * 0.44,
+                          height: AppLayout.getHight(210),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF3AB8B8),
+                            borderRadius:
+                                BorderRadius.circular(AppLayout.getHight(18)),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              vertical: AppLayout.getHight(15),
+                              horizontal: AppLayout.getHight(15)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Discount\nfor survay",
+                                  style: Styles.headLineStyle2.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white)),
+                              Gap(AppLayout.getHight(10)),
+                              Text(
+                                "Take the survay about our services and get discount",
+                                style: Styles.headLineStyle2.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18),
+                              )
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          right: -45,
+                          top: -40,
+                          child: Container(
+                            margin:
+                                EdgeInsets.only(left: AppLayout.getHight(10)),
+                            padding: EdgeInsets.all(AppLayout.getHight(30)),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                width: 18,
+                                color: Color(0xFF189999),
+                              ),
+                              color: Colors.transparent,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    Gap(AppLayout.getHight(15)),
                     Container(
                       margin: EdgeInsets.only(left: AppLayout.getHight(10)),
                       width: size.width * 0.44,
                       height: AppLayout.getHight(210),
-                      decoration: BoxDecoration(
-                        color: Color(0xFF3AB8B8),
-                        borderRadius:
-                            BorderRadius.circular(AppLayout.getHight(18)),
-                      ),
                       padding: EdgeInsets.symmetric(
                           vertical: AppLayout.getHight(15),
                           horizontal: AppLayout.getHight(15)),
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(AppLayout.getHight(18)),
+                          color: const Color(0xFFEC6545)),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Discount\nfor survay",
-                              style: Styles.headLineStyle2.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white)),
-                          Gap(AppLayout.getHight(10)),
                           Text(
-                            "Take the survay about our services and get discount",
+                            "Take love",
                             style: Styles.headLineStyle2.copyWith(
                                 color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18),
-                          )
+                                fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+                          Gap(AppLayout.getHight(5)),
+                          RichText(
+                              text: TextSpan(children: [
+                            TextSpan(
+                                text: '😊', style: TextStyle(fontSize: 28)),
+                            TextSpan(
+                                text: '😘', style: TextStyle(fontSize: 50)),
+                            TextSpan(text: '🤗', style: TextStyle(fontSize: 28))
+                          ]))
                         ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(AppLayout.getHight(30)),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          width: 18,
-                          color: Color(0xFF189999),
-                        ),
-                        color: Colors.transparent,
                       ),
                     )
                   ],
