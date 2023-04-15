@@ -70,10 +70,13 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                         Gap(AppLayout.getHight(5)),
-                        Text("Premium status",
-                            style: TextStyle(
-                                color: Color.fromARGB(230, 87, 39, 153),
-                                fontWeight: FontWeight.w500))
+                        Text(
+                          "Premium status",
+                          style: TextStyle(
+                              color: Color.fromARGB(207, 87, 39, 153),
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Gap(AppLayout.getHight(10)),
                       ],
                     ),
                   )
@@ -203,12 +206,68 @@ class ProfileScreen extends StatelessWidget {
                       isColor: true,
                     ),
                     AppColumnLayout(
-                      firstString: "23 042",
-                      secoundString: "Air Asia",
+                      firstString: "Airline CO",
+                      secoundString: "Received from",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: true,
+                    ),
+                  ],
+                ),
+                Gap(AppLayout.getHight(30)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnLayout(
+                      firstString: "24",
+                      secoundString: "Miles",
                       alignment: CrossAxisAlignment.start,
                       isColor: true,
-                    )
+                    ),
+                    AppColumnLayout(
+                      firstString: "McDonal's",
+                      secoundString: "Received from",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: true,
+                    ),
                   ],
+                ),
+                Gap(AppLayout.getHight(30)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnLayout(
+                      firstString: "52 340",
+                      secoundString: "Miles",
+                      alignment: CrossAxisAlignment.start,
+                      isColor: true,
+                    ),
+                    AppColumnLayout(
+                      firstString: "Exuma",
+                      secoundString: "Received from",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: true,
+                    ),
+                  ],
+                ),
+                Gap(AppLayout.getHight(45)),
+                InkWell(
+                  onTap: () {
+                    print("You are tapped");
+                  },
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            "How to get more miles",
+                            style: TextStyle(color: Styles.primaryColor),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
